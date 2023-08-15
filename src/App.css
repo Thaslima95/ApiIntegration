@@ -11,6 +11,14 @@
   margin: 0 auto;
   padding: 40px;
 }
+table,
+th,
+tr,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
 .food-preference {
   height: 40px;
 }

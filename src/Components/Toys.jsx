@@ -70,6 +70,7 @@ function Toys() {
       );
       const newapi = [...apidata, response.data];
       setApiData(newapi);
+      fetchList();
     } catch (err) {
       console.error(err);
     }
@@ -148,8 +149,8 @@ function Toys() {
                 onChange={(e) => setdata({ ...newData, Type: e.target.value })}
                 className="food-preference"
               >
-                <MenuItem value={"Veg"}>Musical</MenuItem>
-                <MenuItem value={"Nonveg"}>Normal</MenuItem>
+                <MenuItem value={"Musical"}>Musical</MenuItem>
+                <MenuItem value={"Normal"}>Normal</MenuItem>
               </Select>
             </FormControl>
             <TextField
@@ -221,48 +222,43 @@ function Toys() {
           </Button>
         )}
       </Box>
-      {apidata.map((e, idx) => {
-        return (
-          <>
-            <table>
-              <thead>
-                <th>Name</th>
-                <th>Material</th>
-                <th>Minimum Age</th>
-                <th>BatteryOperated</th>
-                <th>Net Quantity</th>
-                <th>Amount</th>
-                <th>Count_of_origin</th>
-                <th>Rechargeable</th>
-                <th>Type</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{e.name}</td>
-                  <td>{e.Material}</td>
-                  <td>{e.MinimumAge}</td>
-                  <td>{e.BatteryOperated}</td>
-                  <td>{e.Net_Quantity}</td>
-                  <td>{e.Amount}</td>
-                  <td>{e.Country_of_Origin}</td>
-                  <td>{e.Rechargeable}</td>
-                  <td>{e.Type}</td>
-                  <td>
-                    <button type="button" onClick={() => handleEdit(e)}>
-                      Edit
-                    </button>
-                  </td>
-                  <td>
-                    <button type="button" onClick={() => handledelete(e.id)}>
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </>
-        );
-      })}
+
+      <table>
+        <thead>
+          <th>Name</th>
+          <th>Material</th>
+          <th>Minimum Age</th>
+          <th>BatteryOperated</th>
+          <th>Net Quantity</th>
+          <th>Amount</th>
+          <th>Count_of_origin</th>
+          <th>Rechargeable</th>
+          <th>Type</th>
+        </thead>
+        <tbody>
+          {apidata.map((e, idx) => {
+            return (
+              <tr>
+                <td>{e.name}</td>
+                <td>{e.Material}</td>
+                <td>{e.MinimumAge}</td>
+                <td>{e.BatteryOperated}</td>
+                <td>{e.Net_Quantity}</td>
+                <td>{e.Amount}</td>
+                <td>{e.Country_of_Origin}</td>
+                <td>{e.Rechargeable}</td>
+                <td>{e.Type}</td>
+                <td>
+                  <Button onClick={() => handleEdit(e)}>Edit</Button>
+                </td>
+                <td>
+                  <Button onClick={() => handledelete(e.id)}>Delete</Button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </>
   );
 }

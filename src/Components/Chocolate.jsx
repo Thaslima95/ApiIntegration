@@ -221,48 +221,42 @@ function Chocolate() {
           </Button>
         )}
       </Box>
-      {apidata.map((e, idx) => {
-        return (
-          <>
-            <table>
-              <thead>
-                <th>Name</th>
-                <th>Brand</th>
-                <th>Expiry</th>
-                <th>Quantity</th>
-                <th>Net Quantity</th>
-                <th>Amount</th>
-                <th>Count_of_origin</th>
-                <th>Gift_pack</th>
-                <th>Food Preference</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{e.name}</td>
-                  <td>{e.Brand}</td>
-                  <td>{e.Expiry}</td>
-                  <td>{e.Quantity}</td>
-                  <td>{e.Net_Quantity}</td>
-                  <td>{e.Amount}</td>
-                  <td>{e.Country_of_Origin}</td>
-                  <td>{e.Gift_Pack}</td>
-                  <td>{e.Food_Preference}</td>
-                  <td>
-                    <button type="button" onClick={() => handleEdit(e)}>
-                      Edit
-                    </button>
-                  </td>
-                  <td>
-                    <button type="button" onClick={() => handledelete(e.id)}>
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </>
-        );
-      })}
+      <table>
+        <thead>
+          <th>Name</th>
+          <th>Brand</th>
+          <th>Expiry</th>
+          <th>Quantity</th>
+          <th>Net Quantity</th>
+          <th>Amount</th>
+          <th>Count_of_origin</th>
+          <th>Gift_pack</th>
+          <th>Food Preference</th>
+        </thead>
+        <tbody>
+          {apidata.map((e, idx) => {
+            return (
+              <tr>
+                <td>{e.name}</td>
+                <td>{e.Brand}</td>
+                <td>{e.Expiry}</td>
+                <td>{e.Quantity}</td>
+                <td>{e.Net_Quantity}</td>
+                <td>{e.Amount}</td>
+                <td>{e.Country_of_Origin}</td>
+                <td>{e.Gift_Pack}</td>
+                <td>{e.Food_Preference}</td>
+                <td>
+                  <Button onClick={() => handleEdit(e)}>Edit</Button>
+                </td>
+                <td>
+                  <Button onClick={() => handledelete(e.id)}>Delete</Button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </>
   );
 }
