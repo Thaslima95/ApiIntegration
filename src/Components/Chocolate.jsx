@@ -119,6 +119,7 @@ function Chocolate() {
         justifyContent={"center"}
         className="Box-model"
       >
+        <h1>Chocolate</h1>
         <div>
           <TextField
             label="Name"

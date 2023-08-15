@@ -101,6 +101,7 @@ function Toys() {
         justifyContent={"center"}
         className="Box-model"
       >
+        <h1>Toys</h1>
         <div>
           <TextField
             label="Name"
@@ -243,9 +244,9 @@ function Toys() {
                 <td>{e.Material}</td>
                 <td>{e.MinimumAge}</td>
                 <td>{e.BatteryOperated}</td>
-                <td>{e.Net_Quantity}</td>
+                <td>{e.NetQuantity}</td>
                 <td>{e.Amount}</td>
-                <td>{e.Country_of_Origin}</td>
+                <td>{e.Country_of_origin}</td>
                 <td>{e.Rechargeable}</td>
                 <td>{e.Type}</td>
                 <td>
