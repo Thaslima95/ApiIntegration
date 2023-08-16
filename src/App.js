@@ -6,8 +6,8 @@ import Toys from './Components/Toys';
 function App() {
   return (
     <>
-    {/* <Chocolate/> */}
-    <Toys/>
+    <Chocolate/>
+    {/* <Toys/> */}
     </>
   );
 }

@@ -25,7 +25,6 @@ function Chocolate() {
     name: "",
     Brand: "",
     Expiry: "",
-    Quantity: 0,
     Food_Preference: "",
     Country_of_Origin: "",
     Net_Quantity: "",
@@ -85,6 +84,7 @@ function Chocolate() {
         console.log(json);
         const newapi = [...apidata, json];
         setApiData(newapi);
+        fetchList();
       })
       .catch((error) => console.error(error));
   };
@@ -227,7 +227,6 @@ function Chocolate() {
           <th>Name</th>
           <th>Brand</th>
           <th>Expiry</th>
-          <th>Quantity</th>
           <th>Net Quantity</th>
           <th>Amount</th>
           <th>Count_of_origin</th>
@@ -241,7 +240,6 @@ function Chocolate() {
                 <td>{e.name}</td>
                 <td>{e.Brand}</td>
                 <td>{e.Expiry}</td>
-                <td>{e.Quantity}</td>
                 <td>{e.Net_Quantity}</td>
                 <td>{e.Amount}</td>
                 <td>{e.Country_of_Origin}</td>
